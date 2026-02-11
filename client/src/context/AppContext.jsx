@@ -51,7 +51,7 @@ export const AppContextProvider = ({children}) => {
         navigate,user,setUser,chats,setChats,selectedChat,setSelectedChat,theme,setTheme
     }
     return(
-        <AppContext.Provider value={{value}}>
+        <AppContext.Provider value={{}}>
             {children}
         </AppContext.Provider>
     )
