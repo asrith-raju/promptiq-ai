@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { useAppContext } from '../context/AppContext.jsx'
 import { assets } from '../assets/assets'
 import moment from 'moment'
+import { Navigate } from 'react-router-dom'
 const SideBar = () => {
 
-  const { chats, setSelectedChat, theme, setTheme, user } = useAppContext()
+  const { chats, setSelectedChat, theme, setTheme, user,navigate} = useAppContext()
   const [search, setSearch] = useState('')
   return (
     <div className='flex flex-col h-screen min-w-72 p-5 dark:bg-gradient-to-b- from-[#242124] to-[#000000]/30 border-r border-[#80609F]/30 backdrop-blur-3xl transition-all duration-500 max-md:absolute left-0 z-1'>
@@ -46,6 +47,30 @@ const SideBar = () => {
               </div>
             ))
         }
+      </div>
+      {/* Community Images */}
+      <div onClick={()=>{navigate('/community')}} className='flex items-center gap-2 p-3 mt-4 border border-gray-300 dark:border-white/15rounded-md cursor-pointer hover:scale-103 transition-all '>
+        <img src={assets.gallery_icon} alt="" className='w-4.5 not-dark:invert' />
+        <div className='flex flex-col text-sm'>
+          <p>Community Images</p>
+        </div>
+      </div>
+
+      {/* Credit Purchase Option */}
+      <div onClick={()=>{navigate('/credits')}} className='flex items-center gap-2 p-3 mt-4 border border-gray-300 dark:border-white/15rounded-md cursor-pointer hover:scale-103 transition-all '>
+        <img src={assets.diamond_icon} alt="" className='w-4.5 dark:invert' />
+        <div className='flex flex-col tect-sm'>
+          <p>Credits : {user?.credits}</p>
+          <p className='text-xs text-gray-400'>Purchase credits to use quickgpt</p>
+        </div>
+      </div>
+
+      {/* Dark Mode Toggle */}
+      <div onClick={()=>{navigate('/community')}} className='flex items-center gap-2 p-3 mt-4 border border-gray-300 dark:border-white/15rounded-md  '>
+        <div className='flex items-center gap-2 text-sm'>
+          <img src={assets.theme_icon} className='w-4 not-dark:invert' alt="" />
+          <p>Dark Mode</p>
+        </div>
       </div>
     </div>
   )
