@@ -1,6 +1,7 @@
 import React, { use, useEffect, useState } from 'react'
 import { useAppContext } from '../context/AppContext'
 import { assets } from '../assets/assets'
+import Message from './Message'
 
 const ChatBox = () => {
 
@@ -23,7 +24,7 @@ const ChatBox = () => {
             <p className='mt-5 text-4xl sm:text-6xl text-center text-gray-400 dark:text-wite'>Ask me anything</p>
           </div>
          )}
-         {messages,map((message,index)=> )}
+         {messages.map((message,index)=> <Message key={index} message={message}/>)}
       </div>
       {/* Prompt Input box */}
       <form>
