@@ -1,6 +1,7 @@
 import React from 'react'
 import { assets } from '../assets/assets'
 import moment from 'moment'
+import Markdown from 'react-markdown'
 
 const Message = ({message}) => {
   return (
@@ -20,7 +21,7 @@ const Message = ({message}) => {
                     <img src={message.content} alt="" className='w-full max-w-md mt-2 rounded-md' />
                   ) :
                   (
-                    <div className='text-sm dark:text-primary reset-tw'>{message.content}</div>
+                    <div className='text-sm dark:text-primary reset-tw'> <Markdown>{message.content}</Markdown></div>
                   )}
                   <span>{moment(message.timestamp).fromNow()}</span>
             </div>
