@@ -25,6 +25,17 @@ const ChatBox = () => {
           </div>
          )}
          {messages.map((message,index)=> <Message key={index} message={message}/>)}
+         {/* Three Dots Loading Animation */}
+         {
+          loading && <div className='loader flex items-center gap-1.5'>
+              <div className='w-1.5 h-1.5 rounded-full bg-gray-500 dark:bg-white animate-bounce'>
+              </div>
+              <div className='w-1.5 h-1.5 rounded-full bg-gray-500 dark:bg-white animate-bounce'>
+              </div>
+              <div className='w-1.5 h-1.5 rounded-full bg-gray-500 dark:bg-white animate-bounce'>
+              </div>
+          </div>
+         }
       </div>
       {/* Prompt Input box */}
       <form>
