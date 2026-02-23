@@ -67,7 +67,7 @@ const SideBar = ({isMenuOpen, setIsMenuOpen}) => {
       </div>
 
       {/* Dark Mode Toggle */}
-      <div onClick={()=>{navigate('/')}} className='flex items-center gap-2 p-3 mt-4 border border-gray-300 dark:border-white/15 rounded-md  justify-between cursor-pointer '>
+      <div className='flex items-center gap-2 p-3 mt-4 border border-gray-300 dark:border-white/15 rounded-md  justify-between cursor-pointer '>
         <div className='flex items-center gap-2 text-sm'>
           <img src={assets.theme_icon} className='w-4 not-dark:invert' alt="" />
           <p>Dark Mode</p>
